@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Full text justification in Delphi'
-  ClientHeight = 485
+  ClientHeight = 441
   ClientWidth = 570
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
