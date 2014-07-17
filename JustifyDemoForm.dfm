@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Full text justification in Delphi'
-  ClientHeight = 410
+  ClientHeight = 485
   ClientWidth = 570
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -16,7 +16,7 @@ object Form1: TForm1
   TextHeight = 13
   object lblRectHeight: TLabel
     Left = 24
-    Top = 341
+    Top = 359
     Width = 62
     Height = 13
     Caption = 'Rect height: '
@@ -49,19 +49,22 @@ object Form1: TForm1
   end
   object lblManualExplanation: TLabel
     Left = 24
-    Top = 376
-    Width = 341
-    Height = 13
+    Top = 393
+    Width = 535
+    Height = 26
     Caption = 
-      'This is always used for some fonts, regardless of the checkbox s' +
-      'etting.'
+      'This is always automatically used in some circumstances: for som' +
+      'e fonts, including Segoe UI; and in some cases for individual li' +
+      'nes, such as when justifying single words (which is not supporte' +
+      'd by the Windows API method.)'
+    WordWrap = True
   end
   object lblManualUsed: TLabel
     Left = 24
-    Top = 391
-    Width = 170
+    Top = 422
+    Width = 140
     Height = 13
-    Caption = 'Automatically used for this font: No'
+    Caption = 'Always used for this font: No'
   end
   object memoTyping: TMemo
     Left = 8
@@ -109,7 +112,7 @@ object Form1: TForm1
   end
   object chkDrawRect: TCheckBox
     Left = 8
-    Top = 321
+    Top = 340
     Width = 122
     Height = 17
     Caption = 'Draw bounding rect'
@@ -127,11 +130,20 @@ object Form1: TForm1
   end
   object chkManual: TCheckBox
     Left = 8
-    Top = 358
+    Top = 375
     Width = 217
     Height = 17
     Caption = 'Always use manual justification method'
     TabOrder = 5
+    OnClick = chkInvalidateClick
+  end
+  object chkJustifySingleWords: TCheckBox
+    Left = 8
+    Top = 321
+    Width = 169
+    Height = 17
+    Caption = 'Justify (stretch) single words'
+    TabOrder = 6
     OnClick = chkInvalidateClick
   end
   object dlgFont: TFontDialog

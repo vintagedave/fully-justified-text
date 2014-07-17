@@ -21,6 +21,7 @@ type
     lblPreviewHeading: TLabel;
     lblManualExplanation: TLabel;
     lblManualUsed: TLabel;
+    chkJustifySingleWords: TCheckBox;
     procedure memoTypingChange(Sender: TObject);
     procedure paintJustificationPaint(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -106,6 +107,8 @@ begin
   Options := [];
   if chkJustifyTrailing.Checked then
     Options := Options + [tjJustifyTrailingLines];
+  if chkJustifySingleWords.Checked then
+    Options := Options + [tjJustifySingleWords];
   if chkManual.Checked then
     Options := Options + [tjForceManual];
 
@@ -124,7 +127,7 @@ begin
     paintJustification.Canvas.Rectangle(Rect);
   end;
 
-  lblManualUsed.Caption := 'Automatically used for this font: ' +
+  lblManualUsed.Caption := 'Always used for this font: ' +
     BoolToStr(not SupportsJustification(paintJustification.Canvas), true);
 end;
 
