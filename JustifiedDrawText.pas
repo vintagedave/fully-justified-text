@@ -18,7 +18,7 @@ unit JustifiedDrawText;
  *
  * The Initial Developer of the Original Code is David Millington.
  *
- * Portions created by the Initial Developer are Copyright (C) 2013
+ * Portions created by the Initial Developer are Copyright (C) 2014
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s): David Millington
